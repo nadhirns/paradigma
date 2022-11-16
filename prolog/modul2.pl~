@@ -1,0 +1,8 @@
+% Manipulasi List
+
+find(X,X):- find(X,X).
+findFirst(X,[H|_]) :- find(X,H).
+
+
+
+

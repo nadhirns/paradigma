@@ -1,0 +1,7 @@
+% Logika
+
+and(A,B):- A,B.
+
+or(A,_):- A, !.
+or(_,B):- A, !.
+

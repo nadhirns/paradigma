@@ -1,0 +1,15 @@
+%binary tree
+%4.01
+isTree(nil).
+isTree(t(_,nil,nil)):- !.
+isTree(t(_,L,nil)):- isTree(L).
+isTree(t(_,nil,R)):- isTree(R).
+isTree(t(_,L,R)):- isTree(L),isTree(R).
+
+%4.02
+cBalTree(0,nil):- !.
+cBalTree(A,t(x,L,R)):- A>0, B is A-1, C is B//2, D is A-B,
+    distrib(C,D,NL,NR), cBalTree(NL,T), cBalTree(NR,R).
+distrib(N,N,N,N):-!.
+distrib(A,B,A,B).
+distrib(A,B,B,A).
